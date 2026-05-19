@@ -1,0 +1,89 @@
+C++ code-
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Given array
+    int arr[] = {10, 5, 10, 15, 10, 5};
+
+    // Size of array
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // Visited array to avoid recounting
+    bool visited[n];
+
+    // Initially mark all as false
+    for(int i = 0; i < n; i++)
+    {
+        visited[i] = false;
+    }
+
+    // Traverse array
+    for(int i = 0; i < n; i++)
+    {
+        // If already counted then skip
+        if(visited[i] == true)
+        {
+            continue;
+        }
+
+        // Frequency starts from 1
+        int count = 1;
+
+        // Check duplicates ahead
+        for(int j = i + 1; j < n; j++)
+        {
+            // If same element found
+            if(arr[i] == arr[j])
+            {
+                count++;
+
+                // Mark duplicate as visited
+                visited[j] = true;
+            }
+        }
+
+        // Print frequency
+        cout << arr[i] << " is presented " << count <<" times" << endl;
+    }
+
+    return 0;
+}
+
+
+
+Python Code
+
+
+# Given array
+arr = [10, 5, 10, 15, 10, 5]
+
+n = len(arr)
+
+# Create visited list
+visited = [False] * n
+
+# Traverse array
+for i in range(n):
+
+    # Skip if already counted
+    if visited[i] == True:
+        continue
+
+    # Frequency starts from 1
+    count = 1
+
+    # Check duplicates
+    for j in range(i + 1, n):
+
+        # Same element found
+        if arr[i] == arr[j]:
+            count += 1
+
+            # Mark duplicate visited
+            visited[j] = True
+
+    # Print result
+    print(arr[i], count)
