@@ -1,0 +1,50 @@
+C++-----
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    // Given array
+    int arr[] = {8, 7, 1, 6, 5, 9};
+
+    // Size of array
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // Sort array
+    sort(arr, arr + n);
+
+    // Print first half in increasing order
+    for(int i = 0; i < n / 2; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    // Print second half in decreasing order
+    for(int i = n - 1; i >= n / 2; i--)
+    {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+
+
+Python ----
+
+# Given array
+arr = [8, 7, 1, 6, 5, 9]
+
+# Sort array
+arr.sort()
+
+n = len(arr)
+
+# Print first half in increasing order
+for i in range(0, n // 2):
+    print(arr[i], end=" ")
+
+# Print second half in decreasing order
+for i in range(n - 1, n // 2 - 1, -1):
+    print(arr[i], end=" ")
