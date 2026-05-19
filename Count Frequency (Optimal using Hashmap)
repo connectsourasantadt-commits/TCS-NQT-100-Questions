@@ -1,0 +1,43 @@
+C++ code-
+
+#include<iostream>
+#include<unordered_map> //hashmap lib
+using namespace std;
+int main() {
+    int arr[] = {10,1,2,2,3,3,4,4,5,5,6};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    //creating hashmap
+    unordered_map<int,int> freq; //key,value, freq
+    //traverse
+    for(int i =0; i<n; i++)
+    {
+        //increase freq
+        freq[arr[i]]++; // increase freq of current value if found next
+    }
+    //print hashmap
+    for(auto it:freq) //automatically traverse the hashmap thorugh iteration
+    {
+        cout << it.first << " values frequency is "<< it.second << " times" <<endl;
+        //it.first= key of hashmap
+        //it.second = value of the hashmap
+        //if hashmap has (10,3) it means 10 value is presented 3 times
+        // so it will print "10 values frequency is 3 times"
+    }
+    return 0;
+}
+
+
+Python Code--
+ arr=[1,1,1,2,2,3,3]
+#empty dictionary
+freq={}
+#travel
+for num in arr:
+    #if already present
+    if num in freq:
+        freq[num]+=1
+    #if unique and first occurence
+    else:
+        freq[num]=1
+for key,value in freq.items(): #in frequency dict there are items- key and values #we are accessing that
+    print(key,value)
