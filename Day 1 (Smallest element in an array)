@@ -1,0 +1,52 @@
+C++ Code-
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    // Array declaration
+    int arr[] = {2, 5, 1, 3, 0};
+
+    // Total number of elements
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // Assume first element is smallest
+    int smallest = arr[0];
+
+    // Traverse array from index 1
+    for(int i = 1; i < n; i++)
+    {
+        // If current element is smaller
+        if(arr[i] < smallest)
+        {
+            // Update smallest
+            smallest = arr[i];
+        }
+    }
+
+    // Print answer
+    cout << "Smallest element is: " << smallest;
+
+    return 0;
+}
+
+
+Python Code-
+
+  # Array declaration
+arr = [2, 5, 1, 3, 0]
+
+# Assume first element is smallest
+smallest = arr[0]
+
+# Traverse remaining elements
+for i in range(1, len(arr)):
+
+    # Check if current element is smaller
+    if arr[i] < smallest:
+
+        # Update smallest
+        smallest = arr[i]
+
+# Print answer
+print("Smallest element is:", smallest)
