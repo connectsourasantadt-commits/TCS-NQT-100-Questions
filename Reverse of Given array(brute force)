@@ -1,0 +1,31 @@
+C++ Code
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[]={5,4,3,2,1}; //array creation
+    int n = sizeof(arr)/ sizeof(arr[0]); //size of array length
+    //creating new array
+    int reversearr[n]; // also of n length as the original one
+    int j=0; // index of new array
+    //travel through the array
+    for (int i =n-1; i>=0; i--)
+    {
+        reversearr[j]= arr[i]; //reversed array first will be last element of first array
+        j++; //proceed to next index
+    }
+    cout<<"reversed array new one is ";
+    for (int i=0; i<n; i++)
+    {
+        cout<< reversearr[i]<< "";
+    }
+    return 0;
+}
+
+Python Code-
+
+arr=[6,5,4,3,2,1]
+n= len(arr) #array length
+reverse_arr=[] #new reversed blank array
+for i in range(n-1,-1,-1):
+    reverse_arr.append(arr[i]) #updating index
+print("new reversed array", reverse_arr) #printing
