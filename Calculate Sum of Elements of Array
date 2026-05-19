@@ -1,0 +1,45 @@
+C++ --
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Given array
+    int arr[] = {1, 2, 3, 4, 5};
+
+    // Size of array
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // Variable to store sum
+    int sum = 0;
+
+    // Traverse array
+    for(int i = 0; i < n; i++)
+    {
+        // Add current element to sum
+        sum = sum + arr[i];
+    }
+
+    // Print final sum
+    cout << "Sum = " << sum;
+
+    return 0;
+}
+
+Python ---
+
+# Given array
+arr = [1, 2, 3, 4, 5]
+
+# Sum variable
+sum = 0
+
+# Traverse array
+for num in arr:
+
+    # Add element to sum
+    sum = sum + num
+
+# Print final sum
+print("Sum =", sum)
