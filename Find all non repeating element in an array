@@ -1,0 +1,22 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<unordered_map>
+using namespace std;
+int main() {
+    int arr[]={1,1,2,3,4,6};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    //declare the hashmap
+    unordered_map<int,int> freq;
+    //store freq of element
+    for(int i=0; i<n; i++){
+        freq[arr[i]]++;
+    }
+    //travel the array
+    for(int i=0; i<n; i++){
+        //if freq will be 1
+        if(freq[arr[i]] == 1){
+            cout<< "" << arr[i] << "";
+        }
+    }
+    return 0;
+}
