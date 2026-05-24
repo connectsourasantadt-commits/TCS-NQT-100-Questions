@@ -1,0 +1,41 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+int main(){
+
+    int arr[] = {1,2,-3,0,-4,-5};
+
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    // Initialize variables
+    int maxProd = arr[0];
+    int minProd = arr[0];
+    int ans = arr[0];
+
+    // Traverse array
+    for(int i = 1; i < n; i++){
+
+        // If current element negative
+        // swap max and min
+        if(arr[i] < 0){
+
+            swap(maxProd, minProd);
+        }
+
+        // Find maximum product till current index
+        maxProd = max(arr[i],
+                      maxProd * arr[i]);
+
+        // Find minimum product till current index
+        minProd = min(arr[i],
+                      minProd * arr[i]);
+
+        // Update final answer
+        ans = max(ans, maxProd);
+    }
+
+    cout << "Maximum Product = " << ans;
+
+    return 0;
+}
